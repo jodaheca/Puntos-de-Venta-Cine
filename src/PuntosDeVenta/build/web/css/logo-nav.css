@@ -1,0 +1,20 @@
+body {
+	margin-top: 125px; /* adjust this if the height of the menu bar changes */
+}
+
+.navbar-fixed-top .nav {
+	padding: 15px 0;
+}
+hr{
+
+border: #008000;
+border-top: 1px solid #008000;
+height: 1px;
+margin: 5px 0;
+display: block;
+clear: both;
+}
+
+.navbar-inner {
+
+}
