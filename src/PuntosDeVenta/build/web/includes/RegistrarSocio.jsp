@@ -25,7 +25,7 @@
                     <h1 class="text-center login-title">Registrar Socio</h1>
                         <div class="account-wall">
                                 <br>
-                                <form name="formulario" class="form-signin" action="IngresarProgramaServlet" method="POST">
+                                <form name="formulario" class="form-signin" action="IngresarSocioServlet" method="POST">
                                     <input type="text" class="form-control" placeholder="Identificación" name="id" id="id" required>
                                      <br>
                                      <input type="text" class="form-control" placeholder="Nombres" name="nombre" id="nombre" required>

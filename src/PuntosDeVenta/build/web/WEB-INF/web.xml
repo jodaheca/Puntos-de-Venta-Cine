@@ -24,6 +24,18 @@
         <servlet-name>LogOutServlet</servlet-name>
         <servlet-class>co.udea.fundsistemas.puntosdeventa.control.LogOutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>IngresarSocioServlet</servlet-name>
+        <servlet-class>co.udea.fundsistemas.puntosdeventa.control.IngresarSocioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ModificarSocioServlet</servlet-name>
+        <servlet-class>co.udea.fundsistemas.puntosdeventa.control.ModificarSocioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EliminarSocioServlet</servlet-name>
+        <servlet-class>co.udea.fundsistemas.puntosdeventa.control.EliminarSocioServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CrearReserva</servlet-name>
         <url-pattern>/CrearReserva</url-pattern>
@@ -47,6 +59,18 @@
     <servlet-mapping>
         <servlet-name>LogOutServlet</servlet-name>
         <url-pattern>/LogOutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IngresarSocioServlet</servlet-name>
+        <url-pattern>/IngresarSocioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModificarSocioServlet</servlet-name>
+        <url-pattern>/ModificarSocioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EliminarSocioServlet</servlet-name>
+        <url-pattern>/EliminarSocioServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

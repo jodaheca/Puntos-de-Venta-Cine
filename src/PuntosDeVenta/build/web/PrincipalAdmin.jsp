@@ -73,7 +73,7 @@
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Vendedores<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href='PrincipalAdmin.jsp?agregarVendedor' >Agregar</a></li>
-                                <li><a href="PrincipalAdmin.jsp?eliminarVendedor" >Eliminar</a></li>
+                                <!--<li><a href="PrincipalAdmin.jsp?eliminarVendedor" >Eliminar</a></li>-->
                                 <li><a href="PrincipalAdmin.jsp?listarVendedores" >Listar Vendedores</a></li>
                             </ul>
                         </li>
@@ -81,7 +81,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href='PrincipalAdmin.jsp?agregarSocio' >Agregar</a></li>
                                 <li><a href="PrincipalAdmin.jsp?eliminarSocio" >Eliminar</a></li>
-                                <li><a href="PrincipalAdmin.jsp?ListarSocio">Listar Socios</a></li>
+                                <li><a href="PrincipalAdmin.jsp?ListarSocios">Listar Socios</a></li>
                             </ul>
                         </li> 
 
@@ -168,12 +168,9 @@
                 <p class="bg-danger">Ingrese Correctamente todos los campos del formulario</p>
             </div>
             <% }  else if (request.getParameter("ListarSocios") != null) {
-//                ProgramaDAO nuevo = new ProgramaDAO();
-//                ProfesorDAO managerProfesor = new ProfesorDAO();
-//                List prog = nuevo.getProgramas();
-//                List directores = managerProfesor.getDirectores(prog);
-//                request.setAttribute("programas", prog);
-//                request.setAttribute("directores", directores);
+                UsuarioDAO nuevo = new UsuarioDAO();
+                List socios = nuevo.getSocios();
+                request.setAttribute("socios", socios);
             %>
             <%@include  file="includes/ListarSocios.jsp" %>
             <% }else if (!(request.getParameter("modificarVendedor") == null)) {
@@ -206,7 +203,49 @@
             %>
             <div class="col-sm-6 col-md-4 col-md-offset-4">
                 <br><br><br>
-                <p class="bg-success">El vendedor se agregó correctamenta</p>
+                <p class="bg-success">El vendedor se agregó correctamente</p>
+            </div>
+            <% } else if (!(request.getParameter("errorIngresoSocio") == null)) {
+            %>
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <br><br><br>
+                <p class="bg-success">Ocurrió un error ingresando el Socio, intente luego</p>
+            </div>
+            <% } else if (!(request.getParameter("ingresoSocioCorrecto") == null)) {
+            %>
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <br><br><br>
+                <p class="bg-success">El Socio se agregó correctamente</p>
+            </div>
+            <% } else if (!(request.getParameter("cedulaError") == null)) {
+            %>
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <br><br><br>
+                <p class="bg-danger">La identificación del Socio debe ser numérica</p>
+            </div>
+            <% } else if (!(request.getParameter("existeCedula") == null)) {
+            %>
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <br><br><br>
+                <p class="bg-danger">La identificación ingresada ya corresponde a otro usuario</p>
+            </div>
+            <% } else if (!(request.getParameter("errorModificarSocio") == null)) {
+            %>
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <br><br><br>
+                <p class="bg-danger">Ocurrió un error modificando la información del Socio, Intente en otro momento </p>
+            </div>
+            <% } else if (!(request.getParameter("socioEliminado") == null)) {
+            %>
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <br><br><br>
+                <p class="bg-success">El Socio se Elimino Correctamente</p>
+            </div>
+            <% }  else if (!(request.getParameter("ErrorEliminarSocio") == null)) {
+            %>
+            <div class="col-sm-6 col-md-4 col-md-offset-4">
+                <br><br><br>
+                <p class="bg-danger">Ocurrio un error al intentar eliminar el Socio</p>
             </div>
             <% }else {%>
             <div  style="height: 300px">

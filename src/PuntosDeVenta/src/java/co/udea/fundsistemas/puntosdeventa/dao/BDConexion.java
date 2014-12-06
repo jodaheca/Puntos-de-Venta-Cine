@@ -35,6 +35,7 @@ public class BDConexion {
                 this.connection = DriverManager.getConnection(url, user, password);
             }
         } catch (SQLException ex) {
+            System.out.println("Error en la conexion: " +ex.toString());
             Logger.getLogger(BDConexion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

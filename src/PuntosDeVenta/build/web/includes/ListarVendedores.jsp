@@ -68,6 +68,10 @@
                                          <input type="hidden" id="telefono" name="telefono" value="<%=telefono%>">
                                         <button class="btn btn-lg btn-primary btn-xs" type="submit">
                                      Modificar</button></form></td>
+                                     <td><form action="PrincipalAdmin.jsp?eliminarVendedor" method="POST">
+                                         <input type="hidden" id="id" name="id" value="<%=id%>">
+                                        <button class="btn btn-lg btn-primary btn-xs" type="submit">
+                                     Eliminar</button></form></td>
                             </tr>
 
                             <%    

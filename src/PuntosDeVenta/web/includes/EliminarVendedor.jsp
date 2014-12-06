@@ -6,6 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%String id = request.getParameter("id");%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -22,7 +24,7 @@
                         <div class="account-wall">
                                 <br>
                                 <form name="eliminar" class="form-signin" action="EliminarVendedorServlet" method="post">
-                                    <input type="text" class="form-control" placeholder="Identificación del Vendedor" name="id" id="id" required>
+                                    <input type="text" class="form-control" value="<%if(id!=null){%><%=id%> <%}%>" placeholder="Identificación del Vendedor" name="id" id="id" required>
                                      <br>  
                                   <button class="btn btn-lg btn-primary btn-block" type="submit">
                                      Eliminar Vendedor</button>
